@@ -5,11 +5,11 @@ function Navbar() {
   const [isActive, setActive] = useState(false);
   useEffect(() => {
     window.addEventListener("scroll", () => {
-      window.scrollY > 60 ? setActive(true) : setActive(false);
+      window.scrollY > 50 ? setActive(true) : setActive(false);
     });
   });
   return (
-    <header className={`${isActive? "bg-white shadow-md fixed w-full z-10":"bg-[#F5E4E0]"} px-6`}>
+    <header className={`${isActive? "bg-white fixed shadow-md z-10 w-full ":"bg-[#F5E4E0]"} px-6`}>
       <div className="flex justify-between items-center p-2 text-2xl h-full">
         <div className="w-12 h-12">
           <img src={logo}></img>
@@ -26,6 +26,7 @@ function Navbar() {
         </div>
       </div>
     </header>
+    
   );
 }
 
