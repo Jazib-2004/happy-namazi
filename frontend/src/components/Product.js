@@ -1,7 +1,9 @@
 import React from "react";
 import { BiCartAdd } from "react-icons/bi";
+import { useCartItemContext } from "../contexts/CartItemContext";
 function Product(props) {
-  const { id, title, image, category, price } = props.product;
+  const { addToCart } = useCartItemContext();
+  const { id, title, image, price } = props.product;
   return (
     <div>
       <div className="border border-[#e4e4e4] h-[300px] mb-4 relative overflow-hidden group">
@@ -15,13 +17,20 @@ function Product(props) {
           </div>
         </div>
         <div className="absolute top-5 -right-11 group-hover:right-5 bg-red-500 p-2 opacity-0 group-hover:opacity-100 transition-all duration-300">
-          <button className="flex justify-center items-center w-4 h-4 sm:w-8 sm:h-8 md:w-6 md:h-6 text-white">
+          <button
+            onClick={() => {
+              addToCart({ id, title, image, price }, id);
+            }}
+            className="flex justify-center items-center w-4 h-4 sm:w-8 sm:h-8 md:w-6 md:h-6 text-white"
+          >
             <BiCartAdd />
           </button>
         </div>
       </div>
       <div>
-        <div><h2 className="font-semibold my-1">{title}</h2></div>
+        <div>
+          <h2 className="font-semibold my-1">{title}</h2>
+        </div>
         <div className="text-gray-500 text-sm">{price} Rs</div>
       </div>
     </div>
