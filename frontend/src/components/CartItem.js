@@ -8,7 +8,7 @@ function CartItem({ item }) {
   return (
     <div className="flex py-2 lg:px-6 items-center border-b border-gray-200 font-light">
       <div className="flex items-center w-full min-h-[150px] space-x-4">
-        <img className="max-w-[80px]" src={item.image} />
+        <img className="max-w-[80px]" src={item.image} alt=""/>
         <div className="flex w-full flex-col">
           <div className="flex justify-between items-start mb-4">
             <div className="text-sm font-medium text-primary uppercase max-w-[240px]">
@@ -29,7 +29,7 @@ function CartItem({ item }) {
                 onClick={() => {
                   decreaseAmount(item);
                 }}
-                className="flex-1 flex justify-center cursor-pointer"
+                className="flex-1 flex justify-center cursor-pointer hover:bg-red-600 hover:text-white h-full items-center"
               >
                 <HiMinusSmall />
               </div>
@@ -38,7 +38,7 @@ function CartItem({ item }) {
                 onClick={() => {
                   addToCart(item,item.id);
                 }}
-                className="flex-1 flex justify-center cursor-pointer"
+                className="flex-1 flex justify-center cursor-pointer hover:bg-green-600 hover:text-white h-full items-center"
               >
                 <HiPlusSmall />
               </div>
