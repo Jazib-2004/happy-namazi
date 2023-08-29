@@ -23,7 +23,7 @@ function Navbar() {
     >
       <div className="flex justify-between items-center p-2 text-2xl h-full">
         <div className="w-12 h-12">
-          <img src={logo}></img>
+          <img src={logo} alt=""></img>
         </div>
         <div className="space-x-2 font-bold">
           <span className=" text-[#FF3131]">Happy</span>
