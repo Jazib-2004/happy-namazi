@@ -1,2 +1,1 @@
-# happy-namazi
-Creating a website for a business based in Karachi.
+Happy Namazi - A REACT based front-end e-commerce application made for a business in Karachi.
